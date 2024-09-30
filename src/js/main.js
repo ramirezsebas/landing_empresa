@@ -47,23 +47,3 @@ const appearOnScroll = new IntersectionObserver(
 faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
-
-document.querySelector('form').addEventListener('submit', function(e) {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
-    
-    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
-    // Check if any field is empty
-    if (name === "" || email === "" || message === "") {
-      alert("Todos los campos son obligatorios.");
-      e.preventDefault(); // Prevent form from submitting
-    } 
-    // Check for valid email format
-    else if (!emailPattern.test(email)) {
-      alert("Por favor ingrese un correo electrónico válido.");
-      e.preventDefault(); // Prevent form from submitting
-    }
-  });
-  
